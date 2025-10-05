@@ -25,17 +25,17 @@
                 "state_attributes": {
                     "preset_mode": {
                         "state": {
-                            "AUT1": "Auto 1",
-                            "AUT2": "Auto 2",
-                            "AUT3": "Auto 3",
-                            "AUTO": "Auto",
-                            "CNT1": "Continuous 1",
-                            "CNT2": "Continuous 2",
-                            "CNT3": "Continuous 3",
-                            "EMPT": "Empty",
-                            "MAN1": "Manual 1",
-                            "MAN2": "Manual 2",
-                            "MAN3": "Manual 3"
+                            "aut1": "Auto 1",
+                            "aut2": "Auto 2",
+                            "aut3": "Auto 3",
+                            "auto": "Auto",
+                            "cnt1": "Continuous 1",
+                            "cnt2": "Continuous 2",
+                            "cnt3": "Continuous 3",
+                            "empt": "Empty",
+                            "man1": "Manual 1",
+                            "man2": "Manual 2",
+                            "man3": "Manual 3"
                         }
                     }
                 }
@@ -51,24 +51,24 @@
             "mode": {
                 "name": "Ventilation mode",
                 "state": {
-                    "AUTO": "Auto",
-                    "MANU": "Manual"
+                    "auto": "Auto",
+                    "manu": "Manual"
                 }
             },
             "state": {
                 "name": "Ventilation state",
                 "state": {
-                    "AUT1": "Auto 1",
-                    "AUT2": "Auto 2",
-                    "AUT3": "Auto 3",
-                    "AUTO": "Auto",
-                    "CNT1": "Continuous 1",
-                    "CNT2": "Continuous 2",
-                    "CNT3": "Continuous 3",
-                    "EMPT": "Empty",
-                    "MAN1": "Manual 1",
-                    "MAN2": "Manual 2",
-                    "MAN3": "Manual 3"
+                    "aut1": "Auto 1",
+                    "aut2": "Auto 2",
+                    "aut3": "Auto 3",
+                    "auto": "Auto",
+                    "cnt1": "Continuous 1",
+                    "cnt2": "Continuous 2",
+                    "cnt3": "Continuous 3",
+                    "empt": "Empty",
+                    "man1": "Manual 1",
+                    "man2": "Manual 2",
+                    "man3": "Manual 3"
                 }
             },
             "time_state_end": {

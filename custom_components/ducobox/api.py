@@ -70,11 +70,11 @@ class DucoBoxApi:
         except TimeoutError as err:
             raise ClientError(f"Timeout fetching data from {self.host}") from err
 
-    async def async_set_ventilation_state(self, state: str | int) -> bool:
+    async def async_set_ventilation_state(self, state: str) -> bool:
         """Set the ventilation state on the DucoBox device."""
 
         url = f"{self._base_url}/action/nodes/1"
-        payload = {"Action": "SetVentilationState", "Val": state}
+        payload = {"Action": "SetVentilationState", "Val": state.upper()}
 
         try:
             async with asyncio.timeout(REQUEST_TIMEOUT):
@@ -106,10 +106,10 @@ class DucoBoxApi:
         iaq_rh = sensor.get("IaqRh", {}).get("Val")
 
         return DucoBoxData(
-            state=state,
+            state=state.lower() if state else None,
             time_state_remain=time_state_remain,
             time_state_end=time_state_end,
-            mode=mode,
+            mode=mode.lower() if mode else None,
             flow_lvl_tgt=flow_lvl_tgt,
             iaq_rh=iaq_rh,
         )
