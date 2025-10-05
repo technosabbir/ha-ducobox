@@ -31,12 +31,12 @@ This integration enables controlling and monitoring DucoBox ventilation systems.
 
 ## Compatibility
 
-### Tested Configuration
+### Tested configuration
 This integration has been tested and verified to work with:
 - DucoBox Silent Connect
 - Duco Connectivity Board 2.0 (API version 2.4).
 
-### Supported Models
+### Supported models
 
 This integration should work with all DucoBox models compatible with the Connectivity Board 2.0, including:
 
@@ -46,11 +46,11 @@ This integration should work with all DucoBox models compatible with the Connect
 - DucoBox Energy Sky
 - DucoBox Energy Premium
 
-> **Note**: If you experience issues with other DucoBox models or Local API versions, please [create a GitHub issue](https://github.com/degeens/ha-ducobox/issues/new) with details about your setup.
+If you experience issues with other DucoBox models or local API versions, please [create a GitHub issue](https://github.com/degeens/ha-ducobox/issues/new).
 
 ## Installation
 
-### HACS (Recommended)
+### HACS (recommended)
 
 1. Open HACS in your Home Assistant instance
 2. Go to "Integrations"
@@ -62,7 +62,7 @@ This integration should work with all DucoBox models compatible with the Connect
 8. Search for "DucoBox" and install it
 9. Restart Home Assistant
 
-### Manual Installation
+### Manual installation
 
 1. Download the latest release from the [releases page](https://github.com/degeens/ha-ducobox/releases)
 2. Extract the `custom_components/ducobox` folder to your Home Assistant `custom_components` directory
@@ -70,7 +70,7 @@ This integration should work with all DucoBox models compatible with the Connect
 
 ## Configuration
 
-### Adding the Integration
+### Adding the integration
 
 1. Go to **Settings** → **Devices & Services**
 2. Click **+ Add Integration**
