@@ -1,46 +1,79 @@
-# Notice
+# DucoBox integration for Home Assistant
 
-The component and platforms in this repository are not meant to be used by a
-user, but as a "blueprint" that custom component developers can build
-upon, to make more awesome stuff.
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
+[![GitHub Release](https://img.shields.io/github/release/degeens/ha-ducobox.svg)](https://github.com/degeens/ha-ducobox/releases)
+[![License](https://img.shields.io/github/license/degeens/ha-ducobox.svg)](LICENSE)
 
-HAVE FUN! 😎
+A Home Assistant integration for DucoBox ventilation systems using the Connectivity Board 2.0 local API.
 
-## Why?
+## Features
 
-This is simple, by having custom_components look (README + structure) the same
-it is easier for developers to help each other and for users to start using them.
+This integration enables controlling and monitoring DucoBox ventilation systems.
 
-If you are a developer and you want to add things to this "blueprint" that you think more
-developers will have use for, please open a PR to add it :)
+### Fan entity
 
-## What?
+- **Preset modes**: Support for all ventilation states (`Auto`, `Auto 1`, `Auto 2`, `Auto 3`, `Continuous 1`, `Continuous 2`, `Continuous 3`, `Empty`, `Manual 1`, `Manual 2`, and `Manual 3`)
 
-This repository contains multiple files, here is a overview:
+### Sensor entities
 
-File | Purpose | Documentation
--- | -- | --
-`.devcontainer.json` | Used for development/testing with Visual Studio Code. | [Documentation](https://code.visualstudio.com/docs/remote/containers)
-`.github/ISSUE_TEMPLATE/*.yml` | Templates for the issue tracker | [Documentation](https://help.github.com/en/github/building-a-strong-community/configuring-issue-templates-for-your-repository)
-`custom_components/integration_blueprint/*` | Integration files, this is where everything happens. | [Documentation](https://developers.home-assistant.io/docs/creating_component_index)
-`CONTRIBUTING.md` | Guidelines on how to contribute. | [Documentation](https://help.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors)
-`LICENSE` | The license file for the project. | [Documentation](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository)
-`README.md` | The file you are reading now, should contain info about the integration, installation and configuration instructions. | [Documentation](https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
-`requirements.txt` | Python packages used for development/lint/testing this integration. | [Documentation](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
+- **Air quality index relative humidity**: An indication of the current air quality based on relative humidity (%)
+- **Target flow level**: Current target flow level (%)
+- **Ventilation mode**: Current ventilation mode (`Auto` or `Manual`)
+- **Ventilation state**: Current ventilation state (`Auto`, `Auto 1`, `Auto 2`, `Auto 3`, `Continuous 1`, `Continuous 2`, `Continuous 3`, `Empty`, `Manual 1`, `Manual 2`, and `Manual 3`)
+- **Ventilation state end time**: Timestamp when current ventilation state will end (or `Unknown` when never ending)
+- **Ventilation state remaining time**: Remaining time in current ventilation state in seconds (or `Unknown` when never ending)
 
-## How?
+## Requirements
 
-1. Create a new repository in GitHub, using this repository as a template by clicking the "Use this template" button in the GitHub UI.
-1. Open your new repository in Visual Studio Code devcontainer (Preferably with the "`Dev Containers: Clone Repository in Named Container Volume...`" option).
-1. Rename all instances of the `integration_blueprint` to `custom_components/<your_integration_domain>` (e.g. `custom_components/awesome_integration`).
-1. Rename all instances of the `Integration Blueprint` to `<Your Integration Name>` (e.g. `Awesome Integration`).
-1. Run the `scripts/develop` to start HA and test out your new integration.
+- Home Assistant 2025.10.1 or newer
+- A DucoBox ventilation system with Duco Connectivity Board 2.0 installed.
+- Local network access to your Duco Connectivity Board 2.0.
 
-## Next steps
+## Compatibility
 
-These are some next steps you may want to look into:
-- Add tests to your integration, [`pytest-homeassistant-custom-component`](https://github.com/MatthewFlamm/pytest-homeassistant-custom-component) can help you get started.
-- Add brand images (logo/icon) to https://github.com/home-assistant/brands.
-- Create your first release.
-- Share your integration on the [Home Assistant Forum](https://community.home-assistant.io/).
-- Submit your integration to [HACS](https://hacs.xyz/docs/publish/start).
+### Tested Configuration
+This integration has been tested and verified to work with:
+- DucoBox Silent Connect
+- Duco Connectivity Board 2.0 (API version 2.4).
+
+### Supported Models
+
+This integration should work with all DucoBox models compatible with the Connectivity Board 2.0, including:
+
+- DucoBox Silent Connect
+- DucoBox Focus
+- DucoBox Energy Comfort (Plus)
+- DucoBox Energy Sky
+- DucoBox Energy Premium
+
+> **Note**: If you experience issues with other DucoBox models or Local API versions, please [create a GitHub issue](https://github.com/degeens/ha-ducobox/issues/new) with details about your setup.
+
+## Installation
+
+### HACS (Recommended)
+
+1. Open HACS in your Home Assistant instance
+2. Go to "Integrations"
+3. Click the three dots in the top right corner
+4. Select "Custom repositories"
+5. Add this repository URL: `https://github.com/degeens/ha-ducobox`
+6. Select "Integration" as the category
+7. Click "Add"
+8. Search for "DucoBox" and install it
+9. Restart Home Assistant
+
+### Manual Installation
+
+1. Download the latest release from the [releases page](https://github.com/degeens/ha-ducobox/releases)
+2. Extract the `custom_components/ducobox` folder to your Home Assistant `custom_components` directory
+3. Restart Home Assistant
+
+## Configuration
+
+### Adding the Integration
+
+1. Go to **Settings** → **Devices & Services**
+2. Click **+ Add Integration**
+3. Search for **DucoBox**
+4. Enter the IP address or hostname of your DucoBox device
+5. Click **Submit**
