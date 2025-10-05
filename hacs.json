@@ -1,5 +1,5 @@
 {
-    "name": "Integration blueprint",
+    "name": "DucoBox",
     "homeassistant": "2025.10.1",
     "hacs": "2.0.5"
 }
