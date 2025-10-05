@@ -1,0 +1,82 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Device is already configured"
+        },
+        "error": {
+            "cannot_connect": "Failed to connect",
+            "unknown": "Unexpected error"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Host"
+                },
+                "data_description": {
+                    "host": "The hostname or IP address of your DucoBox Connectivity Board."
+                }
+            }
+        }
+    },
+    "entity": {
+        "fan": {
+            "ventilation": {
+                "name": "Ventilation",
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "AUT1": "Auto 1",
+                            "AUT2": "Auto 2",
+                            "AUT3": "Auto 3",
+                            "AUTO": "Auto",
+                            "CNT1": "Continuous 1",
+                            "CNT2": "Continuous 2",
+                            "CNT3": "Continuous 3",
+                            "EMPT": "Empty",
+                            "MAN1": "Manual 1",
+                            "MAN2": "Manual 2",
+                            "MAN3": "Manual 3"
+                        }
+                    }
+                }
+            }
+        },
+        "sensor": {
+            "flow_lvl_tgt": {
+                "name": "Target flow level"
+            },
+            "iaq_rh": {
+                "name": "Air quality index relative humidity"
+            },
+            "mode": {
+                "name": "Ventilation mode",
+                "state": {
+                    "AUTO": "Auto",
+                    "MANU": "Manual"
+                }
+            },
+            "state": {
+                "name": "Ventilation state",
+                "state": {
+                    "AUT1": "Auto 1",
+                    "AUT2": "Auto 2",
+                    "AUT3": "Auto 3",
+                    "AUTO": "Auto",
+                    "CNT1": "Continuous 1",
+                    "CNT2": "Continuous 2",
+                    "CNT3": "Continuous 3",
+                    "EMPT": "Empty",
+                    "MAN1": "Manual 1",
+                    "MAN2": "Manual 2",
+                    "MAN3": "Manual 3"
+                }
+            },
+            "time_state_end": {
+                "name": "Ventilation state end time"
+            },
+            "time_state_remain": {
+                "name": "Ventilation state remaining time"
+            }
+        }
+    }
+}
