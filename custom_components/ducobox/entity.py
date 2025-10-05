@@ -17,7 +17,6 @@ class DucoBoxEntity(CoordinatorEntity[DucoBoxCoordinator]):
 
     def __init__(self, coordinator: DucoBoxCoordinator) -> None:
         """Initialize the DucoBox entity."""
-
         super().__init__(coordinator)
 
         device_info = coordinator.device_info

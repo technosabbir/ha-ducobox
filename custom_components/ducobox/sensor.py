@@ -88,12 +88,11 @@ SENSORS: tuple[DucoBoxSensorEntityDescription, ...] = (
 
 
 async def async_setup_entry(
-    hass: HomeAssistant,
+    hass: HomeAssistant,  # noqa: ARG001
     entry: DucoBoxConfigEntry,
     async_add_entities: AddConfigEntryEntitiesCallback,
 ) -> None:
     """Set up DucoBox sensor based on a config entry."""
-
     coordinator = entry.runtime_data
 
     async_add_entities(
@@ -112,7 +111,6 @@ class DucoBoxSensor(DucoBoxEntity, SensorEntity):
         description: DucoBoxSensorEntityDescription,
     ) -> None:
         """Initialize DucoBox sensor."""
-
         super().__init__(coordinator)
 
         self._attr_unique_id = f"{coordinator.config_entry.entry_id}_{description.key}"
@@ -121,5 +119,4 @@ class DucoBoxSensor(DucoBoxEntity, SensorEntity):
     @property
     def native_value(self) -> StateType | datetime:
         """Return the state of the sensor."""
-
         return self.entity_description.value_fn(self.coordinator.data)

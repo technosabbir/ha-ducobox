@@ -13,7 +13,7 @@ from .entity import DucoBoxEntity
 
 
 async def async_setup_entry(
-    hass: HomeAssistant,
+    hass: HomeAssistant,  # noqa: ARG001
     entry: DucoBoxConfigEntry,
     async_add_entities: AddConfigEntryEntitiesCallback,
 ) -> None:
@@ -36,7 +36,6 @@ class DucoBoxFan(DucoBoxEntity, FanEntity):
         coordinator: DucoBoxCoordinator,
     ) -> None:
         """Initialize DucoBox fan."""
-
         super().__init__(coordinator)
 
         self._attr_unique_id = f"{coordinator.config_entry.entry_id}_fan"
@@ -44,7 +43,6 @@ class DucoBoxFan(DucoBoxEntity, FanEntity):
     @property
     def is_on(self) -> bool:
         """Return true if the fan is on."""
-
         return True
 
     @property
@@ -54,5 +52,4 @@ class DucoBoxFan(DucoBoxEntity, FanEntity):
 
     async def async_set_preset_mode(self, preset_mode: str) -> None:
         """Set the preset mode of the fan."""
-
         await self.coordinator.async_set_ventilation_state(preset_mode)

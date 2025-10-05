@@ -5,9 +5,8 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from aiohttp import ClientError
 import voluptuous as vol
-
+from aiohttp import ClientError
 from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
 from homeassistant.const import CONF_HOST
 from homeassistant.core import HomeAssistant
@@ -27,7 +26,8 @@ STEP_USER_DATA_SCHEMA = vol.Schema(
 
 
 async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> dict[str, str]:
-    """Validate the user input allows us to connect.
+    """
+    Validate the user input allows us to connect.
 
     Data has the keys from STEP_USER_DATA_SCHEMA with values provided by the user.
     """
@@ -37,7 +37,7 @@ async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> dict[str,
     try:
         device_info = await api.async_get_device_info()
     except ClientError as err:
-        raise CannotConnect from err
+        raise CannotConnectError from err
 
     return {"title": device_info.model, "unique_id": device_info.serial_number}
 
@@ -52,13 +52,12 @@ class DucoBoxConfigFlow(ConfigFlow, domain=DOMAIN):
         self, user_input: dict[str, Any] | None = None
     ) -> ConfigFlowResult:
         """Handle the initial step."""
-
         errors: dict[str, str] = {}
 
         if user_input is not None:
             try:
                 info = await validate_input(self.hass, user_input)
-            except CannotConnect:
+            except CannotConnectError:
                 errors["base"] = "cannot_connect"
             except Exception:
                 _LOGGER.exception("Unexpected exception")
@@ -75,5 +74,5 @@ class DucoBoxConfigFlow(ConfigFlow, domain=DOMAIN):
         )
 
 
-class CannotConnect(HomeAssistantError):
+class CannotConnectError(HomeAssistantError):
     """Error to indicate we cannot connect."""

@@ -2,11 +2,10 @@
 
 from __future__ import annotations
 
-from datetime import timedelta
 import logging
+from datetime import timedelta
 
 from aiohttp import ClientError
-
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import HomeAssistantError
@@ -46,15 +45,16 @@ class DucoBoxCoordinator(DataUpdateCoordinator[DucoBoxData]):
         self.config_entry = config_entry
 
     async def async_setup(self) -> None:
-        """Set up the coordinator.
+        """
+        Set up the coordinator.
 
         Fetch device info.
         """
-
         try:
             self.device_info = await self.api.async_get_device_info()
         except Exception as err:
-            raise UpdateFailed(f"Failed to get device info: {err}") from err
+            msg = f"Failed to get device info: {err}"
+            raise UpdateFailed(msg) from err
 
         _LOGGER.debug(
             "Device info fetched during coordinator setup: %s", self.device_info
@@ -62,11 +62,11 @@ class DucoBoxCoordinator(DataUpdateCoordinator[DucoBoxData]):
 
     async def _async_update_data(self) -> DucoBoxData:
         """Update the data."""
-
         try:
             data = await self.api.async_get_data()
         except Exception as err:
-            raise UpdateFailed(f"Failed to get data: {err}") from err
+            msg = f"Failed to get data: {err}"
+            raise UpdateFailed(msg) from err
 
         _LOGGER.debug("Data fetched during coordinator update: %s", data)
 
@@ -74,14 +74,13 @@ class DucoBoxCoordinator(DataUpdateCoordinator[DucoBoxData]):
 
     async def async_set_ventilation_state(self, state: str) -> None:
         """Set the ventilation state."""
-
         try:
             success = await self.api.async_set_ventilation_state(state)
             if not success:
-                raise HomeAssistantError(f"Failed to set ventilation state to {state}")
+                msg = f"Failed to set ventilation state to {state}"
+                raise HomeAssistantError(msg)
 
             await self.async_request_refresh()
         except ClientError as err:
-            raise HomeAssistantError(
-                f"Failed to set ventilation state to {state}: {err}"
-            ) from err
+            msg = f"Failed to set ventilation state to {state}: {err}"
+            raise HomeAssistantError(msg) from err

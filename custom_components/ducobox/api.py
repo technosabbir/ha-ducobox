@@ -17,14 +17,12 @@ class DucoBoxApi:
 
     def __init__(self, host: str, session: ClientSession) -> None:
         """Initialize the API client."""
-
         self.host = host
         self._base_url = f"http://{host}"
         self.session = session
 
     async def async_get_device_info(self) -> DucoBoxDeviceInfo:
         """Get device information from the DucoBox device."""
-
         url = f"{self._base_url}/info"
 
         try:
@@ -50,11 +48,11 @@ class DucoBoxApi:
                     mac_address=str(mac_address),
                 )
         except TimeoutError as err:
-            raise ClientError(f"Timeout fetching device info from {self.host}") from err
+            msg = f"Timeout fetching device info from {self.host}"
+            raise ClientError(msg) from err
 
     async def async_get_data(self) -> DucoBoxData:
         """Fetch data from the DucoBox device."""
-
         url = f"{self._base_url}/info/nodes/1"
         params = {
             "parameter": "State,TimeStateRemain,TimeStateEnd,Mode,FlowLvlTgt,IaqRh"
@@ -68,11 +66,11 @@ class DucoBoxApi:
 
                 return self._map_response_data(data)
         except TimeoutError as err:
-            raise ClientError(f"Timeout fetching data from {self.host}") from err
+            msg = f"Timeout fetching data from {self.host}"
+            raise ClientError(msg) from err
 
     async def async_set_ventilation_state(self, state: str) -> bool:
         """Set the ventilation state on the DucoBox device."""
-
         url = f"{self._base_url}/action/nodes/1"
         payload = {"Action": "SetVentilationState", "Val": state.upper()}
 
@@ -82,19 +80,15 @@ class DucoBoxApi:
                 response.raise_for_status()
                 result = await response.json()
 
-                if result.get("Result") == "SUCCESS":
-                    return True
-                return False
+                return result.get("Result") == "SUCCESS"
 
         except TimeoutError as err:
-            raise ClientError(
-                f"Timeout setting ventilation state to {state} on {self.host}"
-            ) from err
+            msg = f"Timeout setting ventilation state to {state} on {self.host}"
+            raise ClientError(msg) from err
 
     @staticmethod
     def _map_response_data(data: dict) -> DucoBoxData:
         """Flatten the nested API response and map to a DucoBoxData object."""
-
         ventilation = data.get("Ventilation", {})
         state = ventilation.get("State", {}).get("Val")
         time_state_remain = ventilation.get("TimeStateRemain", {}).get("Val")

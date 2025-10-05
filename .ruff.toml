@@ -13,6 +13,9 @@ ignore = [
     "D212", # multi-line-summary-first-line (incompatible with formatter)
     "COM812", # incompatible with formatter
     "ISC001", # incompatible with formatter
+    "TC001", # typing-only-first-party-import
+    "TC002", # typing-only-third-party-import
+    "TC003", # typing-only-standard-library-import
 ]
 
 [lint.flake8-pytest-style]

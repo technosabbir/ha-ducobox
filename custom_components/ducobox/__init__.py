@@ -19,7 +19,6 @@ type DucoBoxConfigEntry = ConfigEntry[DucoBoxCoordinator]
 
 async def async_setup_entry(hass: HomeAssistant, entry: DucoBoxConfigEntry) -> bool:
     """Set up DucoBox from a config entry."""
-
     session = async_get_clientsession(hass)
     api = DucoBoxApi(entry.data[CONF_HOST], session)
 
@@ -41,5 +40,4 @@ async def async_setup_entry(hass: HomeAssistant, entry: DucoBoxConfigEntry) -> b
 
 async def async_unload_entry(hass: HomeAssistant, entry: DucoBoxConfigEntry) -> bool:
     """Unload a config entry."""
-
     return await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
