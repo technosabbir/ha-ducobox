@@ -16,12 +16,12 @@ This integration enables controlling and monitoring DucoBox ventilation systems.
 
 ### Sensor entities
 
-- **Air quality index relative humidity**: An indication of the current air quality based on relative humidity (%)
-- **Target flow level**: Current target flow level (%)
-- **Ventilation mode**: Current ventilation mode (`Auto` or `Manual`)
-- **Ventilation state**: Current ventilation state (`Auto`, `Auto 1`, `Auto 2`, `Auto 3`, `Continuous 1`, `Continuous 2`, `Continuous 3`, `Empty`, `Manual 1`, `Manual 2`, and `Manual 3`)
-- **Ventilation state end time**: Timestamp when current ventilation state will end (or `Unknown` when never ending)
-- **Ventilation state remaining time**: Remaining time in current ventilation state in seconds (or `Unknown` when never ending)
+- **Air Quality Index Relative Humidity**: An indication of the current air quality based on relative humidity (%)
+- **Target Flow Level**: Current target flow level (%)
+- **Ventilation Mode**: Current ventilation mode (`Auto` or `Manual`)
+- **Ventilation State**: Current ventilation state (`Auto`, `Auto 1`, `Auto 2`, `Auto 3`, `Continuous 1`, `Continuous 2`, `Continuous 3`, `Empty`, `Manual 1`, `Manual 2`, and `Manual 3`)
+- **Ventilation State End Time**: Timestamp when current ventilation state will end (or `Unknown` when never ending)
+- **Ventilation State Remaining Time**: Remaining time in current ventilation state in seconds (or `Unknown` when never ending)
 
 ## Requirements
 
