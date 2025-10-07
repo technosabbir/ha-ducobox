@@ -43,20 +43,20 @@
         },
         "sensor": {
             "flow_lvl_tgt": {
-                "name": "Target flow level"
+                "name": "Target Flow Level"
             },
             "iaq_rh": {
-                "name": "Air quality index relative humidity"
+                "name": "Air Quality Index Relative Humidity"
             },
             "mode": {
-                "name": "Ventilation mode",
+                "name": "Ventilation Mode",
                 "state": {
                     "auto": "Auto",
                     "manu": "Manual"
                 }
             },
             "state": {
-                "name": "Ventilation state",
+                "name": "Ventilation State",
                 "state": {
                     "aut1": "Auto 1",
                     "aut2": "Auto 2",
@@ -72,10 +72,10 @@
                 }
             },
             "time_state_end": {
-                "name": "Ventilation state end time"
+                "name": "Ventilation State End Time"
             },
             "time_state_remain": {
-                "name": "Ventilation state remaining time"
+                "name": "Ventilation State Remaining Time"
             }
         }
     }

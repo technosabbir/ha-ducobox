@@ -29,7 +29,6 @@ class DucoBoxFan(DucoBoxEntity, FanEntity):
     _attr_supported_features = FanEntityFeature.PRESET_MODE
     _attr_preset_modes = DUCOBOX_VENTILATION_STATES
     _attr_translation_key = "ventilation"
-    _attr_name = None
 
     def __init__(
         self,
