@@ -11,7 +11,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
-from .api import DucoBoxApi
+from .api import DucoConnectivityBoardApi
 from .const import DOMAIN
 from .models import DucoBoxData, DucoBoxDeviceInfo
 
@@ -30,7 +30,7 @@ class DucoBoxCoordinator(DataUpdateCoordinator[DucoBoxData]):
         self,
         hass: HomeAssistant,
         config_entry: ConfigEntry,
-        api: DucoBoxApi,
+        api: DucoConnectivityBoardApi,
     ) -> None:
         """Initialize coordinator."""
         super().__init__(

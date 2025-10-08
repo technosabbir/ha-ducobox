@@ -13,7 +13,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
-from .api import DucoBoxApi
+from .api import DucoConnectivityBoardApi
 from .const import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
@@ -32,7 +32,7 @@ async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> dict[str,
     Data has the keys from STEP_USER_DATA_SCHEMA with values provided by the user.
     """
     session = async_get_clientsession(hass)
-    api = DucoBoxApi(data[CONF_HOST], session)
+    api = DucoConnectivityBoardApi(data[CONF_HOST], session)
 
     try:
         device_info = await api.async_get_device_info()
