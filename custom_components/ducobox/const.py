@@ -2,8 +2,6 @@
 
 DOMAIN = "ducobox"
 
-DUCOBOX_BOX_NAMES = {"SILENT_CONNECT": "Silent Connect"}
-
 DUCOBOX_VENTILATION_MODES = [
     "auto",
     "manu",

@@ -6,7 +6,6 @@ import asyncio
 
 from aiohttp import ClientError, ClientSession
 
-from .const import DUCOBOX_BOX_NAMES
 from .models import DucoBoxData, DucoBoxDeviceInfo
 
 REQUEST_TIMEOUT = 10
@@ -40,8 +39,10 @@ class DucoBoxApi:
                 serial_number = board.get("SerialDucoBox", {}).get("Val", "")
                 mac_address = lan.get("Mac", {}).get("Val", "")
 
+                formatted_box_name = box_name.replace("_", " ").title()
+
                 return DucoBoxDeviceInfo(
-                    model=DUCOBOX_BOX_NAMES.get(box_name, box_name),
+                    model=formatted_box_name,
                     api_version=str(api_version),
                     serial_number=str(serial_number),
                     mac_address=str(mac_address),
